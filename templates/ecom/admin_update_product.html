@@ -1,0 +1,106 @@
+{% extends 'ecom/admin_base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+    <head>
+        <style media="screen">
+            a:link {
+                text-decoration: none;
+            }
+
+            .note {
+                text-align: center;
+                height: 80px;
+                background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+                color: #fff;
+                font-weight: bold;
+                line-height: 80px;
+            }
+
+            .form-content {
+                padding: 5%;
+                border: 1px solid #ced4da;
+                margin-bottom: 2%;
+            }
+
+
+
+            .menu {
+                top: 50px;
+            }
+        </style>
+
+    </head>
+    <br><br><br><br><br><br>
+
+
+
+    <div class="container register-form">
+        <div class="form">
+            <div class="note">
+                <p>Actualizar Producto</p>
+            </div>
+            <div class="form-content">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group pt-3">
+                                {% render_field form.codigo_fabrica class="form-control" placeholder="Codigo de fabrica" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.name class="form-control" placeholder="Nombre Producto" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.description class="form-control" placeholder="Descripción" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.categoria class="form-control" placeholder="Categoria" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.estado class="form-control" placeholder="Estado" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.stock class="form-control" placeholder="Stock" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.price class="form-control" placeholder="Precio" %}
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-6">
+
+                            <div class="form-group pt-3">
+                                {% render_field form.product_image class="form-control" placeholder="producto_imagen" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.marca class="form-control" placeholder="Marca" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.proveedor class="form-control" placeholder="Proveedor" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.product_precio_discuento class="form-control" placeholder="Precio descuento" %}
+                            </div>
+                            <div class="form-group pt-3">
+                                {% render_field form.garantia class="form-control" placeholder="Garantia del producto" %}
+                            </div>
+
+
+                        </div>
+
+                           <div class="form-group pt-5 text-center">
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
+                            </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}
